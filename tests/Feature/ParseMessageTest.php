@@ -1,9 +1,9 @@
 <?php
 
-namespace Tingo\MessageBrokerListener\Tests\Feature;
+namespace Tingo\MessageBroker\Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Tingo\MessageBrokerListener\Tests\TestCase;
+use Tingo\MessageBroker\Tests\TestCase;
 
 class ParseMessageTest extends TestCase
 {

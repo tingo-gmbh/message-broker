@@ -1,11 +1,11 @@
 <?php
 
-namespace Tingo\MessageBrokerListener;
+namespace Tingo\MessageBroker;
 
 use Illuminate\Support\ServiceProvider;
-use Tingo\MessageBrokerListener\Commands\MessageBrokerListener;
+use Tingo\MessageBroker\Commands\MessageBrokerListener;
 
-class MessageBrokerListenerProvider extends ServiceProvider
+class MessageBrokerServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
@@ -14,7 +14,7 @@ class MessageBrokerListenerProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/message-broker-listener.php', 'message-broker-listener');
+        $this->mergeConfigFrom(__DIR__ . '/../config/message-broker.php', 'message-broker');
     }
 
     /**
@@ -27,7 +27,7 @@ class MessageBrokerListenerProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             // Publish config file.
             $this->publishes([
-                __DIR__ . '/../config/message-broker-listener.php' => config_path('message-broker-listener.php'),
+                __DIR__ . '/../config/message-broker.php' => config_path('message-broker.php'),
             ], 'config');
 
             // Register commands

@@ -1,16 +1,16 @@
 {
-    "name": "tingo-gmbh/message-broker-listener",
-    "description": "Listen to message broker events",
+    "name": "tingo-gmbh/message-broker",
+    "description": "Receive and send messages from and to a broker.",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Tingo\\MessageBrokerListener\\": "src/"
+            "Tingo\\MessageBroker\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Tingo\\MessageBrokerListener\\MessageBrokerListenerProvider"
+                "MessageBrokerServiceProvider"
             ]
         }
     },
@@ -27,7 +27,8 @@
     },
     "require": {
         "php": ">=8.1",
-        "illuminate/support": "^10.13"
+        "illuminate/support": "^10.13",
+        "php-amqplib/php-amqplib": "^3.5"
     },
     "require-dev": {
         "orchestra/testbench": "^8.5",
@@ -35,7 +36,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Tingo\\MessageBrokerListener\\Tests\\": "tests"
+            "Tingo\\MessageBroker\\Tests\\": "tests"
         }
     }
 }

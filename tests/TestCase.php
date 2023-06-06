@@ -1,7 +1,7 @@
 <?php
-namespace Tingo\MessageBrokerListener\Tests;
+namespace Tingo\MessageBroker\Tests;
 
-use Tingo\MessageBrokerListener\MessageBrokerListenerProvider;
+use Tingo\MessageBroker\MessageBrokerServiceProvider;
 
 class TestCase extends \Orchestra\Testbench\TestCase
 {
@@ -21,7 +21,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
     protected function getPackageProviders($app): array
     {
         return [
-            MessageBrokerListenerProvider::class,
+            MessageBrokerServiceProvider::class,
         ];
     }
 

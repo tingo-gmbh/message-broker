@@ -1,6 +1,6 @@
 <?php
 
-namespace Tingo\MessageBrokerListener\Commands;
+namespace Tingo\MessageBroker\Commands;
 
 use Illuminate\Console\Command;
 
@@ -11,7 +11,7 @@ class MessageBrokerListener extends Command
      *
      * @var string
      */
-    protected $signature = 'message-broker-listener:listen';
+    protected $signature = 'message-broker:listen';
 
     /**
      * The console command description.
