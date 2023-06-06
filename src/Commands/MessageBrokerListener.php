@@ -12,7 +12,7 @@ class MessageBrokerListener extends Command
      *
      * @var string
      */
-    protected $signature = 'message-broker:listen';
+    protected $signature = 'message-broker:listen {--queue=default}';
 
     /**
      * The console command description.
@@ -26,7 +26,9 @@ class MessageBrokerListener extends Command
      */
     public function handle(MessageBroker $messageBroker): void
     {
-        $this->info('Start listening...');
+        $queueName = $this->option('queue');
+
+        $this->info('Start listening on queue '.$queueName.'...');
 
         $messageBroker->listen();
     }
