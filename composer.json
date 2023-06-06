@@ -1,0 +1,41 @@
+{
+    "name": "tingo-gmbh/message-broker-listener",
+    "description": "Listen to message broker events",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Tingo\\MessageBrokerListener\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Tingo\\MessageBrokerListener\\MessageBrokerListenerProvider"
+            ]
+        }
+    },
+    "authors": [
+        {
+            "name": "Tingo GmbH",
+            "email": "development@tingo.ch"
+        }
+    ],
+    "scripts": {
+        "test": [
+            "vendor/bin/phpunit"
+        ]
+    },
+    "require": {
+        "php": ">=8.1",
+        "illuminate/support": "^10.13"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.5",
+        "phpunit/phpunit": "^10.2"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tingo\\MessageBrokerListener\\Tests\\": "tests"
+        }
+    }
+}
