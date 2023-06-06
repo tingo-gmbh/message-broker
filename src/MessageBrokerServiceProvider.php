@@ -2,7 +2,10 @@
 
 namespace Tingo\MessageBroker;
 
+use Exception;
 use Illuminate\Support\ServiceProvider;
+use Tingo\MessageBroker\Broker\FakeMessageBroker;
+use Tingo\MessageBroker\Broker\RabbitMQMessageBroker;
 use Tingo\MessageBroker\Commands\MessageBrokerListener;
 
 class MessageBrokerServiceProvider extends ServiceProvider
@@ -21,6 +24,7 @@ class MessageBrokerServiceProvider extends ServiceProvider
      * Bootstrap any application services.
      *
      * @return void
+     * @throws Exception
      */
     public function boot(): void
     {
@@ -37,5 +41,16 @@ class MessageBrokerServiceProvider extends ServiceProvider
                 ],
             );
         }
+
+        // Register classes
+        $concreteBroker = match(config('message-broker.default')) {
+            'rabbitmq' => RabbitMQMessageBroker::class,
+            'fake' => FakeMessageBroker::class,
+            default => throw new Exception('Invalid message broker'),
+        };
+        $this->app->bind(
+            abstract: Broker\MessageBroker::class,
+            concrete: $concreteBroker,
+        );
     }
 }

@@ -1,1 +1,1 @@
-{"version":1,"defects":[],"times":{"Tingo\\MessageBrokerListener\\Tests\\Feature\\ParseMessageTest::testParseMessage":0.008}}
+{"version":1,"defects":{"Tingo\\MessageBroker\\Tests\\Feature\\ParseMessageTest::testParseMessage":5,"Tingo\\MessageBroker\\Tests\\Feature\\RunListenerTest::testParseMessage":5},"times":{"Tingo\\MessageBrokerListener\\Tests\\Feature\\ParseMessageTest::testParseMessage":0.008,"Tingo\\MessageBroker\\Tests\\Feature\\ParseMessageTest::testParseMessage":0.007,"Tingo\\MessageBroker\\Tests\\Feature\\RunListenerTest::testParseMessage":0.002}}

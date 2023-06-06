@@ -33,10 +33,10 @@ class RabbitMQMessageBroker implements MessageBroker
     public function __construct()
     {
         $this->connection = new AMQPStreamConnection(
-            config('message-broker.host'),
-            config('message-broker.port'),
-            config('message-broker.user'),
-            config('message-broker.password')
+            config('message-broker.services.rabbitmq.host'),
+            config('message-broker.services.rabbitmq.port'),
+            config('message-broker.services.rabbitmq.user'),
+            config('message-broker.services.rabbitmq.password')
         );
         $this->channel = $this->connection->channel();
     }

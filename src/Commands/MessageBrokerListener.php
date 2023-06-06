@@ -3,6 +3,7 @@
 namespace Tingo\MessageBroker\Commands;
 
 use Illuminate\Console\Command;
+use Tingo\MessageBroker\Broker\MessageBroker;
 
 class MessageBrokerListener extends Command
 {
@@ -23,8 +24,10 @@ class MessageBrokerListener extends Command
     /**
      * Execute the console command.
      */
-    public function handle(): void
+    public function handle(MessageBroker $messageBroker): void
     {
-        $this->info('Yeah I am listening');
+        $this->info('Start listening...');
+
+        $messageBroker->listen();
     }
 }
