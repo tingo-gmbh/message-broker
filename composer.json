@@ -10,7 +10,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "MessageBrokerServiceProvider"
+        "Tingo\\MessageBroker\\MessageBrokerServiceProvider"
       ]
     }
   },
